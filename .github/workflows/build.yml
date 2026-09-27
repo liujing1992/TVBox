@@ -19,9 +19,9 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # 蜂蜜大佬的项目标准编译命令通常是 make
-      - name: Build with Make
-        run: ./gradlew make
+      # 尝试直接编译 Release 版本，或者使用更底层的构建命令
+      - name: Build Release APK
+        run: ./gradlew assembleRelease
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
